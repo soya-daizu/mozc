@@ -98,9 +98,12 @@
   },
   'target_defaults': {
     'variables': {
-      # See http://msdn.microsoft.com/en-us/library/aa652360(VS.71).aspx
+      # https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.vcprojectengine.vcclcompilertool.optimization?view=visualstudiosdk-2017
+      # https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.vcprojectengine.optimizeoption?view=visualstudiosdk-2017
+      # https://docs.microsoft.com/en-us/cpp/build/reference/o1-o2-minimize-size-maximize-speed?view=msvc-150
       'win_optimization_debug%': '0',    # 0 = /Od
-      'win_optimization_release%': '2',  # 2 = /Og /Oi /Ot /Oy /Ob2 /Gs /GF /Gy
+      'win_optimization_release%': '2',  # 2 = /O2 (maximize speed)
+                                         #   = /Og /Oi /Ot /Oy /Ob2 /GF /Gy
       'win_optimization_custom%': '4',   # 4 = None but prevents vcbuild from
                                          # inheriting default optimization.
       # See http://msdn.microsoft.com/en-us/library/aa652367(VS.71).aspx
@@ -333,11 +336,7 @@
         'ExceptionHandling': '2',              # /EHs
         'SuppressStartupBanner': 'true',       # /nologo
         'WarningLevel': '3',                   # /W3
-        # As discussed in the Release_Base block, /Oy- should be added to make
-        # debugging easy. However, we obsereved an unexpected behavior of
-        # base/win_api_test_helper_test with the /Oy- option.
-        # We disable this flag until a solution is introduced.
-        # 'OmitFramePointers': 'false',        # /Oy-
+        'OmitFramePointers': 'false',          # /Oy-
         'AdditionalOptions': [
           '/Zc:strictStrings',
           '/utf-8',
