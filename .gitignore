@@ -52,3 +52,6 @@
 /src/android/resources/res
 /src/android/tests/AndroidManifest.xml
 /src/android/tests/libs/
+
+
+/src/data/dictionary_oss/dictionary00.txt
