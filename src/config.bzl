@@ -40,8 +40,8 @@ MACOS_BUNDLE_ID_PREFIX = "org.mozc.inputmethod.Japanese"
 MACOS_MIN_OS_VER = "10.12"
 
 ## Qt paths
-QT_BASE_PATH = "/usr/include/x86_64-linux-gnu/qt5"  # For Debian
-QT_BIN_PATH = "/usr/bin/"
+QT_BASE_PATH = "/usr/local/Cellar/qt@5/5.15.3"
+QT_BIN_PATH = "/usr/local/Cellar/qt@5/5.15.3/bin"
 
 ## For macOS
 # This path is the default path of Qt 5.15.2 installed by "make install".
